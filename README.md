@@ -39,17 +39,13 @@ Spotify, Kdenlive, Upscayl, Blanket, Cozy
 ## 🔧 Installation
 
 ### ⚡ Quick Start (Arch / CachyOS)
-Copy and paste this block to install everything and run the app:
+Copy and paste this entire block to install and launch everything in one go:
 ```bash
-# 1. Install dependencies
-sudo pacman -S --needed python-gobject gtk4 libadwaita flatpak git base-devel
-
-# 2. Clone and Install
-git clone https://github.com/goodborn/architect-deploy.git
-cd architect-deploy
-sudo make install
-
-# 3. Launch
+# 1. Start sudo session and install dependencies
+sudo -v && sudo pacman -S --needed python-gobject gtk4 libadwaita flatpak git base-devel && \
+git clone https://github.com/goodborn/architect-deploy.git && \
+cd architect-deploy && \
+sudo make install && \
 architect-deploy
 ```
 
