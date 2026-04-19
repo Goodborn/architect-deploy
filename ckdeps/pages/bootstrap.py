@@ -63,8 +63,6 @@ class BootstrapPage(Gtk.Box):
 
         self.append(status_box)
 
-        self.append(status_box)
-
         # ─── Continue Button (hidden until done) ─────
         self._continue_btn = Gtk.Button(label="Continue  →")
         self._continue_btn.add_css_class("nav-button-primary")

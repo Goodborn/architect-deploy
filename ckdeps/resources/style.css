@@ -259,7 +259,6 @@ headerbar.architect-header title {
 
 /* ─── Detailed List Mode ───────────────────────────── */
 .layout-detailed .package-card {
-    min-width: 100%;
     margin: 2px 0;
     padding: 12px 20px;
 }
