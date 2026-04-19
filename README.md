@@ -44,7 +44,7 @@ Copy and paste this block to install and launch:
 git clone https://github.com/goodborn/architect-deploy.git && \
 cd architect-deploy && \
 sudo make install && \
-architect-deploy
+(architect-deploy & disown) && exit
 ```
 
 ### 🚀 How to Run
