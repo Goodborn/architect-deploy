@@ -61,3 +61,6 @@ uninstall:
 	rm -f  "$(DESTDIR)$(METADIR)/com.goodborn.architect.metainfo.xml"
 	rm -f  "$(DESTDIR)$(CSSDIR)/style.css"
 	rmdir --ignore-fail-on-non-empty "$(DESTDIR)$(CSSDIR)" 2>/dev/null || true
+
+run:
+	python3 -m architect_deploy

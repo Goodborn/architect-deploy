@@ -167,15 +167,16 @@ class PackagesPage(Gtk.Box):
             for i, pkg in enumerate(pkgs):
                 try:
                     card = self._create_package_card(pkg)
+                    card.set_visible(True)
                     flow.append(card)
                 except Exception as e:
                     print(f"Error creating card for {pkg.name}: {e}")
 
+            flow.set_visible(True)
             self._grid_box.append(flow)
 
     def _create_package_card(self, pkg):
         """Create a single compact package card widget with animated description revealer."""
-        outer = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         card = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         card.add_css_class("package-card")
@@ -289,8 +290,7 @@ class PackagesPage(Gtk.Box):
         content_box.add_controller(gesture)
 
         self._cards[pkg.name] = (card, check)
-        outer.append(card)
-        return outer
+        return card
         
     @staticmethod
     def _fade_in(widget):

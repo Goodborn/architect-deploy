@@ -47,6 +47,12 @@ sudo make install && \
 architect-deploy
 ```
 
+### 🚀 How to Run
+After installing, you can launch the app anytime by:
+1. Typing `architect-deploy` in your terminal.
+2. Searching for **"Architect"** in your application menu.
+3. Running `make run` inside the project folder.
+
 ### 📦 From AUR (Recommended)
 If you prefer using an AUR helper like `yay`:
 ```bash
