@@ -12,13 +12,10 @@ Architect is a tailored companion for my fresh-install workflow. It provides a g
 
 ## ✨ Features
 
-| Feature | Description |
-|---------|-------------|
 | 📦 **Smart Packages** | Personalized list of AUR + Flatpak apps |
 | ⚡ **One-Click Bootstrap** | Automates system updates and manager setup |
-| 🎨 **Personal Tweaks** | Custom aliases, privacy settings, and app configs |
+| 🎨 **Personal Tweaks** | Custom aliases, KDE settings, and app configs |
 | 📊 **Live Progress** | Real-time installation tracking with log output |
-| 🛡️ **Privacy First** | Tweaks to disable tracking and secure your setup |
 
 ## 📋 Package List
 
@@ -26,7 +23,7 @@ Architect is a tailored companion for my fresh-install workflow. It provides a g
 thefuck, fzf, atuin, zoxide, bazaar, hyprsunset, anydesk-bin, foliate,
 libreoffice-still, betterbird, bolt-launcher, haruna, popcorntime,
 vmware-workstation, vmware-keymaps, qbittorrent, vesktop, obs-studio,
-visual-studio-code-bin, proton-vpn-gtk-app, solaar, harmonoid, brave-bin, eden
+visual-studio-code-bin, proton-vpn-gtk-app, solaar, harmonoid, brave-bin, firefox, eden
 
 ### Flatpak
 Spotify, Kdenlive, Upscayl, Blanket, Cozy

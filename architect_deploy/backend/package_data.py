@@ -54,6 +54,7 @@ AUR_PACKAGES = [
     Package("solaar", "Solaar", "Logitech device manager", "input-mouse", "Hardware", "aur", domain="logitech.com"),
     Package("harmonoid", "Harmonoid", "Beautiful music player", "multimedia-audio-player", "Media", "aur", domain="harmonoid.com"),
     Package("brave-bin", "Brave Browser", "Privacy-focused web browser", "brave-browser", "Internet", "aur", domain="brave.com"),
+    Package("firefox", "Firefox", "Fast, private, and open-source web browser", "firefox", "Internet", "aur", domain="firefox.com"),
     Package("eden", "Eden", "Modern development tool", "applications-development", "Development", "aur", domain="github.com"),
 ]
 
@@ -83,6 +84,8 @@ EXTRAS = [
                 "input-mouse"),
     ExtraConfig("disable_recent", "Disable Recent Files", "Turn off GNOME recent file tracking for privacy",
                 "preferences-system-privacy"),
+    ExtraConfig("kde_sync", "KDE Setup Sync", "Syncs your KDE environment. If a backup exists in ~/Documents/ArchitectBackups, it restores it. Otherwise, it backups your current theme, shortcuts, and panel layout.",
+                "preferences-desktop-theme"),
 ]
 
 # ---------- Category Colors (for UI) ----------
