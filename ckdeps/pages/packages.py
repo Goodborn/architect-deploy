@@ -219,6 +219,7 @@ class PackagesPage(Gtk.Box):
         # Content container
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
         content_box.set_hexpand(True)
+        content_box.set_valign(Gtk.Align.CENTER)
 
         # Info Box (Icon + Name + Badges)
         info_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
@@ -235,6 +236,7 @@ class PackagesPage(Gtk.Box):
         name_label.add_css_class("package-name")
         name_label.set_halign(Gtk.Align.START)
         name_label.set_valign(Gtk.Align.CENTER)
+        name_label.set_margin_top(2)
         name_label.set_ellipsize(Pango.EllipsizeMode.END)
         name_badge_box.append(name_label)
 
