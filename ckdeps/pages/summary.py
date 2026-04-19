@@ -94,10 +94,16 @@ class SummaryPage(Gtk.Box):
         self._close_btn.connect("clicked", lambda _: self.on_close())
         footer_box.append(self._close_btn)
 
+        # Personal Signature
+        signature = Gtk.Label(label="Handcrafted by Goodborn")
+        signature.add_css_class("personal-signature")
+        signature.set_opacity(0)
+        footer_box.append(signature)
+
         # Store widgets for animation
         self._anim_widgets = [
             check_icon, header, self._subheader, self._stats_grid,
-            self._results_title, self._scroll, self._close_btn
+            self._results_title, self._scroll, self._close_btn, signature
         ]
 
     def populate(self, package_results, extras_results, duration=0, log=""):

@@ -126,6 +126,14 @@ headerbar.architect-header title {
     line-height: 1.6;
 }
 
+.personal-signature {
+    font-size: 11px;
+    font-style: italic;
+    color: alpha(#c4b5fd, 0.4);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
 .welcome-features {
     margin-bottom: 36px;
 }

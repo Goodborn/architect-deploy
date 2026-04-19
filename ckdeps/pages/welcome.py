@@ -37,8 +37,8 @@ class WelcomePage(Gtk.Box):
 
         # ─── Description ─────────────────────────────
         desc = Gtk.Label(
-            label="A personal collection of custom system tweaks,\n"
-                  "package selections, and CachyOS optimizations."
+            label="An opinionated, personal collection of custom system tweaks,\n"
+                  "my preferred package selections, and personal optimizations."
         )
         desc.add_css_class("welcome-description")
         desc.set_wrap(True)
@@ -47,6 +47,12 @@ class WelcomePage(Gtk.Box):
         desc.set_opacity(0)
         self.append(desc)
 
+        # ─── Personal Signature ──────────────────────
+        signature = Gtk.Label(label="Handcrafted by Goodborn")
+        signature.add_css_class("personal-signature")
+        signature.set_opacity(0)
+        self.append(signature)
+
         # ─── Feature Cards ───────────────────────────
         features_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
         features_box.set_halign(Gtk.Align.CENTER)
@@ -54,10 +60,10 @@ class WelcomePage(Gtk.Box):
         features_box.set_opacity(0)
 
         features = [
-            ("📦", "Smart Packages", "AUR + Flatpak"),
-            ("⚡", "Auto Bootstrap", "System prep in one click"),
-            ("🎨", "Extras Config", "Aliases, startup apps, privacy"),
-            ("📊", "Live Progress", "Real-time installation tracking"),
+            ("📦", "My Packages", "AUR + Flatpak picks"),
+            ("⚡", "Personal Prep", "Custom bootstrap script"),
+            ("🎨", "Handpicked Extras", "Opinionated system tweaks"),
+            ("📊", "Live Progress", "Real-time deployment tracking"),
         ]
 
         for icon, ftitle, fdesc in features:
