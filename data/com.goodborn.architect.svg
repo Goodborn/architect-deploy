@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rocket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0e7ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c4b5fd;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#bg)" />
+  <circle cx="64" cy="64" r="60" fill="none" stroke="#c084fc" stroke-width="2" opacity="0.3" />
+  
+  <!-- Rocket body -->
+  <g transform="translate(64,64) rotate(-45) translate(-20,-35)" filter="url(#glow)">
+    <!-- Main body -->
+    <path d="M20,0 C20,0 8,15 8,35 L8,55 C8,58 12,62 20,62 C28,62 32,58 32,55 L32,35 C32,15 20,0 20,0 Z" 
+          fill="url(#rocket)" opacity="0.95"/>
+    
+    <!-- Window -->
+    <circle cx="20" cy="28" r="6" fill="#6366f1" opacity="0.8"/>
+    <circle cx="20" cy="28" r="4" fill="#a855f7" opacity="0.5"/>
+    
+    <!-- Left fin -->
+    <path d="M8,42 L0,55 L8,52 Z" fill="#c084fc" opacity="0.8"/>
+    
+    <!-- Right fin -->
+    <path d="M32,42 L40,55 L32,52 Z" fill="#c084fc" opacity="0.8"/>
+    
+    <!-- Flame -->
+    <ellipse cx="20" cy="67" rx="6" ry="10" fill="#f59e0b" opacity="0.9"/>
+    <ellipse cx="20" cy="65" rx="4" ry="7" fill="#fbbf24" opacity="0.8"/>
+    <ellipse cx="20" cy="63" rx="2" ry="4" fill="#fef3c7" opacity="0.9"/>
+  </g>
+  
+  <!-- Subtle stars -->
+  <circle cx="25" cy="30" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="100" cy="45" r="1" fill="white" opacity="0.4"/>
+  <circle cx="95" cy="95" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="30" cy="100" r="1" fill="white" opacity="0.3"/>
+  <circle cx="45" cy="20" r="1" fill="white" opacity="0.5"/>
+</svg>

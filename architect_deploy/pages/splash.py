@@ -1,0 +1,60 @@
+"""Splash screen — initial loading animation."""
+
+import gi
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
+from gi.repository import Gtk, Adw, GLib
+
+
+class SplashPage(Gtk.Box):
+    """Initial splash screen with animation."""
+
+    def __init__(self):
+        super().__init__(orientation=Gtk.Orientation.VERTICAL)
+        self.set_valign(Gtk.Align.CENTER)
+        self.set_halign(Gtk.Align.CENTER)
+        self.add_css_class("splash-container")
+
+        # ─── Logo / Icon ──────────────────────────────
+        self._logo = Gtk.Label(label="💎")
+        self._logo.add_css_class("splash-logo")
+        self._logo.set_opacity(0)
+        self.append(self._logo)
+
+        # ─── Title ───────────────────────────────────
+        self._title = Gtk.Label(label="ARCHITECT")
+        self._title.add_css_class("splash-title")
+        self._title.set_opacity(0)
+        self.append(self._title)
+
+        # ─── Loading Bar ─────────────────────────────
+        self._progress = Gtk.ProgressBar()
+        self._progress.add_css_class("splash-progress")
+        self._progress.set_margin_top(20)
+        self._progress.set_opacity(0)
+        self.append(self._progress)
+
+        self._status = Gtk.Label(label="Initializing System...")
+        self._status.add_css_class("splash-status")
+        self._status.set_opacity(0)
+        self.append(self._status)
+
+    def start_animation(self):
+        """Animate the splash elements in."""
+        GLib.timeout_add(100, self._fade_in, self._logo)
+        GLib.timeout_add(300, self._fade_in, self._title)
+        GLib.timeout_add(500, self._fade_in, self._progress)
+        GLib.timeout_add(500, self._fade_in, self._status)
+
+        # Start progress pulse
+        GLib.timeout_add(100, self._pulse_progress)
+
+    def _pulse_progress(self):
+        self._progress.pulse()
+        return True
+
+    @staticmethod
+    def _fade_in(widget):
+        widget.set_opacity(1)
+        widget.add_css_class("animate-slide-up")
+        return False

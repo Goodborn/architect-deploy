@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+"""Architect Deploy — Entry point script."""
+
+import sys
+import os
+
+# Determine base directory for import resolution
+_script_dir = os.path.dirname(os.path.realpath(__file__))
+
+# When installed: /usr/bin/architect-deploy → libs at /usr/lib/architect-deploy/
+# When running from source: ./bin/architect-deploy → libs at ../
+_installed_lib = os.path.join(os.path.dirname(_script_dir), "lib", "architect-deploy")
+_source_lib = os.path.dirname(_script_dir)
+
+for path in [_installed_lib, _source_lib]:
+    if os.path.isdir(os.path.join(path, "architect_deploy")):
+        sys.path.insert(0, path)
+        break
+
+from architect_deploy.main import main
+
+if __name__ == "__main__":
+    sys.exit(main())
