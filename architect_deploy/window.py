@@ -129,6 +129,7 @@ class ArchitectWindow(Adw.ApplicationWindow):
     def _show_welcome(self):
         """Transition from splash to welcome."""
         self._stack.set_visible_child_name("welcome")
+        self._welcome_page.focus_entry()
         return False
 
     def _load_css(self):

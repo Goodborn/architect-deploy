@@ -132,6 +132,10 @@ class WelcomePage(Gtk.Box):
         widget.set_opacity(1)
         return False  # Don't repeat
 
+    def focus_entry(self):
+        """Set keyboard focus to the password entry."""
+        self.pass_entry.grab_focus()
+
     def _on_begin_clicked(self):
         password = self.pass_entry.get_text()
         if not password:
