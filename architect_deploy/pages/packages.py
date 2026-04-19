@@ -6,6 +6,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, GLib, Pango
 
 from ..backend.package_data import ALL_PACKAGES, AUR_PACKAGES, FLATPAK_PACKAGES, CATEGORY_COLORS
+from ..backend.icon_loader import icon_loader
 
 
 class PackagesPage(Gtk.Box):
@@ -164,11 +165,11 @@ class PackagesPage(Gtk.Box):
                 flow.add_css_class("layout-detailed")
 
             for i, pkg in enumerate(pkgs):
-                card = self._create_package_card(pkg)
-                card.set_opacity(0)
-                flow.append(card)
-                # Animate in
-                GLib.timeout_add(100 + i * 40, self._fade_in, card)
+                try:
+                    card = self._create_package_card(pkg)
+                    flow.append(card)
+                except Exception as e:
+                    print(f"Error creating card for {pkg.name}: {e}")
 
             self._grid_box.append(flow)
 
@@ -197,15 +198,14 @@ class PackagesPage(Gtk.Box):
 
         if pkg.domain:
             url = f"https://icon.horse/icon/{pkg.domain}"
-            from ..backend.icon_loader import icon_loader
             def on_icon_loaded(pixbuf):
                 if pixbuf:
                     icon_image.set_from_pixbuf(pixbuf)
                 else:
-                    icon_image.set_from_icon_name(pkg.icon_name)
+                    icon_image.set_from_icon_name(pkg.icon_name or "package-x-generic")
             icon_loader.load_icon_async(url, pkg.icon_name, 24, on_icon_loaded)
         else:
-            icon_image.set_from_icon_name(pkg.icon_name)
+            icon_image.set_from_icon_name(pkg.icon_name or "package-x-generic")
 
         # Content container
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)

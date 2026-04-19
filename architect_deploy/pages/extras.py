@@ -5,7 +5,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw
 
-from ..backend.package_data import EXTRAS, ExtraConfig
+from architect_deploy.backend.package_data import EXTRAS, ExtraConfig
 
 
 class ExtrasPage(Gtk.Box):

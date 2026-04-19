@@ -283,7 +283,7 @@ class SummaryPage(Gtk.Box):
         pkg_icon.set_valign(Gtk.Align.CENTER)
         
         if pkg.domain:
-            from ..backend.icon_loader import icon_loader
+            from architect_deploy.backend.icon_loader import icon_loader
             def on_icon_loaded(pixbuf):
                 if pixbuf:
                     pkg_icon.set_from_pixbuf(pixbuf)
@@ -339,7 +339,7 @@ class SummaryPage(Gtk.Box):
         pkg_icon.set_valign(Gtk.Align.CENTER)
         
         if pkg.domain:
-            from ..backend.icon_loader import icon_loader
+            from architect_deploy.backend.icon_loader import icon_loader
             def on_icon_loaded(pixbuf):
                 if pixbuf:
                     pkg_icon.set_from_pixbuf(pixbuf)
