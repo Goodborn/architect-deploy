@@ -37,8 +37,8 @@ class WelcomePage(Gtk.Box):
 
         # ─── Description ─────────────────────────────
         desc = Gtk.Label(
-            label="An opinionated, personal collection of custom system tweaks,\n"
-                  "my preferred package selections, and personal optimizations."
+            label="A personal initial (fresh install) app to my liking\n"
+                  "to get CachyOS KDE ready for my personal use."
         )
         desc.add_css_class("welcome-description")
         desc.set_wrap(True)

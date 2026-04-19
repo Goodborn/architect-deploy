@@ -1,8 +1,8 @@
 # 🚀 CKDEPS
 
-**CachyOS KDE Personal Stuff**
+**CKDEPS — A personal initial (fresh install) app to get CachyOS KDE ready.**
 
-CKDEPS is a premium, automated deployment wizard designed specifically for personal CachyOS setups. It streamlines the installation of essential packages and automates system-wide optimizations in a single, beautiful interface.
+CKDEPS is a personal initial (fresh install) app to my liking to get CachyOS KDE ready for my personal use.
 
 ![CKDEPS](https://img.shields.io/badge/GTK4-Adwaita-a855f7?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green?style=for-the-badge)
@@ -82,15 +82,15 @@ python3 -m architect_deploy
 
 ```
 ckdeps/
-├── architect_deploy/
-│   ├── __init__.py          # Package metadata
+├── ckdeps/
+│   ├── __init__.py          # CKDEPS — A personal initial (fresh install) app to get CachyOS KDE ready.
 │   ├── main.py              # Application entry point
 │   ├── window.py            # Main window + page navigation
 │   ├── backend/
 │   │   ├── installer.py     # Threaded shell command execution
 │   │   └── package_data.py  # Package & extras definitions
 │   ├── pages/
-│   │   ├── welcome.py       # Animated welcome screen
+│   │   ├── welcome.py       # A personal initial (fresh install) app to my liking to get CachyOS KDE ready for my personal use.
 │   │   ├── bootstrap.py     # System preparation page
 │   │   ├── packages.py      # Package selection grid
 │   │   ├── extras.py        # Configuration extras
