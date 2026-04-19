@@ -81,6 +81,8 @@ EXTRAS = [
                 "folder-videos"),
     ExtraConfig("disable_recent", "Disable Recent Files", "Turn off GNOME recent file tracking for privacy",
                 "preferences-system-privacy"),
+    ExtraConfig("performance_mode", "Performance Mode", "Set power profiles to performance (ideal for desktops)",
+                "power-profile-performance-symbolic"),
 ]
 
 # ---------- Category Colors (for UI) ----------

@@ -284,6 +284,8 @@ class Installer:
                     result = self._setup_haruna(installed_packages)
                 elif extra.key == "disable_recent":
                     result = self._disable_recent_files()
+                elif extra.key == "performance_mode":
+                    result = self._set_performance_mode()
                 else:
                     result = ("skipped", "Unknown extra")
 
@@ -399,6 +401,16 @@ class Installer:
             return ("success", "Recent files disabled")
         except Exception as e:
             return ("failed", str(e))
+
+    def _set_performance_mode(self) -> tuple[str, str]:
+        """Set power profile to performance."""
+        if not shutil.which("powerprofilesctl"):
+            return ("failed", "powerprofilesctl not found")
+        
+        success, _ = self._run_command(["powerprofilesctl", "set", "performance"])
+        if success:
+            return ("success", "Performance mode enabled")
+        return ("failed", "Failed to set performance mode")
 
     def _install_java(self) -> tuple[str, str]:
         """Install JRE for Bolt Launcher."""
