@@ -37,8 +37,8 @@ class WelcomePage(Gtk.Box):
 
         # ─── Description ─────────────────────────────
         desc = Gtk.Label(
-            label="Your CachyOS fresh-install companion.\n"
-                  "Effortlessly bootstrap, install packages, and configure your system."
+            label="A personal collection of custom system tweaks,\n"
+                  "package selections, and CachyOS optimizations."
         )
         desc.add_css_class("welcome-description")
         desc.set_wrap(True)

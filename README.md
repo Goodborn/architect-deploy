@@ -1,10 +1,8 @@
 # 🚀 Architect Deploy
 
-**Beautiful GTK4/Adwaita system deployment wizard for CachyOS / Arch Linux**
+**A personal collection of custom system tweaks and package selections for CachyOS / Arch Linux**
 
-Transform your fresh-install experience into a guided, animated GUI wizard.
-Select packages from AUR and Flatpak, configure system extras, and watch
-everything install with live progress tracking — no terminal required.
+Architect is a tailored companion for my fresh-install workflow. It provides a guided, animated GUI wizard to bootstrap my system, install my preferred AUR and Flatpak packages, and apply my specific configuration extras.
 
 ![Architect Deploy](https://img.shields.io/badge/GTK4-Adwaita-a855f7?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green?style=for-the-badge)
@@ -16,12 +14,11 @@ everything install with live progress tracking — no terminal required.
 
 | Feature | Description |
 |---------|-------------|
-| 📦 **Smart Packages** | AUR + Flatpak with auto-detection of installed status |
-| ⚡ **One-Click Bootstrap** | System update, yay install, Flathub setup — automated |
-| 🎨 **Extras Config** | Custom aliases, Solaar autostart, GNOME privacy tweaks |
+| 📦 **Smart Packages** | Personalized list of AUR + Flatpak apps |
+| ⚡ **One-Click Bootstrap** | Automates system updates and manager setup |
+| 🎨 **Personal Tweaks** | Custom aliases, privacy settings, and app configs |
 | 📊 **Live Progress** | Real-time installation tracking with log output |
-| 🛡️ **Brave Fix** | Automatic KWallet workaround for Brave Browser |
-| 🎮 **Gaming Ready** | Bolt Launcher + Java runtime auto-dependency |
+| 🛡️ **Privacy First** | Tweaks to disable tracking and secure your setup |
 
 ## 📋 Package List
 
