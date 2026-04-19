@@ -42,7 +42,7 @@ Spotify, Kdenlive, Upscayl, Blanket, Cozy
 Copy and paste this entire block to install and launch everything in one go:
 ```bash
 # 1. Start sudo session and install dependencies
-sudo -v && sudo pacman -S --needed python-gobject gtk4 libadwaita flatpak git base-devel && \
+sudo -v && sudo pacman -S --needed python-gobject gtk4 libadwaita flatpak git base-devel librsvg && \
 git clone https://github.com/goodborn/architect-deploy.git && \
 cd architect-deploy && \
 sudo make install && \
