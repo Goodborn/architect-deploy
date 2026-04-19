@@ -281,7 +281,18 @@ class SummaryPage(Gtk.Box):
         pkg_icon = Gtk.Image()
         pkg_icon.set_pixel_size(16)
         pkg_icon.set_valign(Gtk.Align.CENTER)
-        pkg_icon.set_from_icon_name(pkg.icon_name or "package-x-generic")
+        
+        if pkg.domain:
+            from ..backend.icon_loader import icon_loader
+            def on_icon_loaded(pixbuf):
+                if pixbuf:
+                    pkg_icon.set_from_pixbuf(pixbuf)
+                else:
+                    pkg_icon.set_from_icon_name(pkg.icon_name or "package-x-generic")
+            icon_loader.load_icon_async(f"https://icon.horse/icon/{pkg.domain}", pkg.icon_name, 16, on_icon_loaded)
+        else:
+            pkg_icon.set_from_icon_name(pkg.icon_name or "package-x-generic")
+            
         box.append(pkg_icon)
         
         name = Gtk.Label(label=pkg.display_name)
@@ -326,7 +337,18 @@ class SummaryPage(Gtk.Box):
         pkg_icon = Gtk.Image()
         pkg_icon.set_pixel_size(24)
         pkg_icon.set_valign(Gtk.Align.CENTER)
-        pkg_icon.set_from_icon_name(pkg.icon_name or "package-x-generic")
+        
+        if pkg.domain:
+            from ..backend.icon_loader import icon_loader
+            def on_icon_loaded(pixbuf):
+                if pixbuf:
+                    pkg_icon.set_from_pixbuf(pixbuf)
+                else:
+                    pkg_icon.set_from_icon_name(pkg.icon_name or "package-x-generic")
+            icon_loader.load_icon_async(f"https://icon.horse/icon/{pkg.domain}", pkg.icon_name, 24, on_icon_loaded)
+        else:
+            pkg_icon.set_from_icon_name(pkg.icon_name or "package-x-generic")
+            
         name_row.append(pkg_icon)
         
         info.append(name_row)
