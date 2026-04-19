@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Architect Deploy
+Name=CKDEPS
 Comment=Beautiful CachyOS system deployment wizard
-Exec=architect-deploy
-Icon=com.goodborn.architect
+Exec=ckdeps
+Icon=com.goodborn.ckdeps
 Terminal=false
 Type=Application
 Categories=System;Settings;PackageManager;
 Keywords=install;setup;deploy;packages;cachyos;arch;
-StartupWMClass=com.goodborn.architect
+StartupWMClass=com.goodborn.ckdeps
 StartupNotify=true

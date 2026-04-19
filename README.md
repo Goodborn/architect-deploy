@@ -25,6 +25,10 @@ libreoffice-still, betterbird, bolt-launcher, haruna, popcorntime,
 vmware-workstation, vmware-keymaps, qbittorrent, vesktop, obs-studio,
 visual-studio-code-bin, proton-vpn-gtk-app, harmonoid, brave-bin, firefox, eden
 
+CKDEPS (CachyOS KDE Personal Stuff)
+
+CKDEPS is a premium, automated deployment wizard designed specifically for personal CachyOS setups. It streamlines the installation of essential packages and automates system-wide optimizations in a single, beautiful interface.
+
 ### Flatpak
 Spotify, Kdenlive, Upscayl, Blanket, Cozy
 
@@ -35,28 +39,28 @@ Spotify, Kdenlive, Upscayl, Blanket, Cozy
 ### ⚡ Quick Start (Arch / CachyOS)
 Copy and paste this block to install and launch:
 ```bash
-git clone https://github.com/goodborn/architect-deploy.git && \
-cd architect-deploy && \
-make run
+git clone https://github.com/goodborn/ckdeps.git && \
+cd ckdeps && \
+ckdeps run
 ```
 
 ### 🚀 How to Run
 After installing, you can launch the app anytime by:
-1. Typing `architect-deploy` in your terminal.
+1. Typing `ckdeps` in your terminal.
 2. Searching for **"Architect"** in your application menu.
 3. Running `make run` inside the project folder.
 
 ### 📦 From AUR (Recommended)
 If you prefer using an AUR helper like `yay`:
 ```bash
-yay -S architect-deploy
+yay -S ckdeps
 ```
 
 ### 🛠️ Run from Source (Development)
 To test changes without installing to your system:
 ```bash
-git clone https://github.com/goodborn/architect-deploy.git
-cd architect-deploy
+git clone https://github.com/goodborn/ckdeps.git
+cd ckdeps
 python3 -m architect_deploy
 ```
 
@@ -80,7 +84,7 @@ python3 -m architect_deploy
 ## 📁 Project Structure
 
 ```
-architect-deploy/
+ckdeps/
 ├── architect_deploy/
 │   ├── __init__.py          # Package metadata
 │   ├── main.py              # Application entry point
@@ -98,7 +102,7 @@ architect-deploy/
 │   └── resources/
 │       └── style.css        # Premium dark theme CSS
 ├── bin/
-│   └── architect-deploy     # CLI entry point
+│   └── ckdeps     # CLI entry point
 ├── data/
 │   ├── com.goodborn.architect.desktop
 │   ├── com.goodborn.architect.svg

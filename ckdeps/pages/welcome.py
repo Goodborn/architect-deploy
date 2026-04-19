@@ -25,12 +25,12 @@ class WelcomePage(Gtk.Box):
         self.append(logo)
 
         # ─── Title ────────────────────────────────────
-        title = Gtk.Label(label="ARCHITECT")
+        title = Gtk.Label(label="CKDEPS")
         title.add_css_class("welcome-title")
         title.set_opacity(0)
         self.append(title)
 
-        subtitle = Gtk.Label(label="SYSTEM  DEPLOYMENT")
+        subtitle = Gtk.Label(label="CachyOS KDE Personal Stuff")
         subtitle.add_css_class("welcome-subtitle")
         subtitle.set_opacity(0)
         self.append(subtitle)

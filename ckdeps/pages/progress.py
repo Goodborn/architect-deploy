@@ -155,7 +155,7 @@ class ProgressPage(Gtk.Box):
         pkg_icon.set_valign(Gtk.Align.CENTER)
         
         if pkg.domain:
-            from architect_deploy.backend.icon_loader import icon_loader
+            from ckdeps.backend.icon_loader import icon_loader
             def on_icon_loaded(pixbuf):
                 if pixbuf:
                     pkg_icon.set_from_pixbuf(pixbuf)

@@ -7,12 +7,12 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, Gio, GLib
 
 from . import __app_id__, __version__
-from .window import ArchitectWindow
+from .window import CKDEPSWindow
 import os
 import sys
 
 
-class ArchitectApp(Adw.Application):
+class CKDEPSApp(Adw.Application):
     """Main GTK4/Adwaita application."""
 
     def __init__(self):
@@ -29,7 +29,7 @@ class ArchitectApp(Adw.Application):
 
         win = self.props.active_window
         if not win:
-            win = ArchitectWindow(self)
+            win = CKDEPSWindow(self)
         win.present()
 
     def do_startup(self):
@@ -56,14 +56,14 @@ class ArchitectApp(Adw.Application):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
             application_name="Architect Deploy",
-            application_icon="com.goodborn.architect",
+            application_icon="com.goodborn.ckdeps",
             developer_name="Goodborn",
             version=__version__,
             developers=["Goodborn"],
             copyright="© 2026 Goodborn",
             license_type=Gtk.License.GPL_3_0,
-            website="https://github.com/goodborn/architect-deploy",
-            issue_url="https://github.com/goodborn/architect-deploy/issues",
+            website="https://github.com.goodborn.ckdeps-deploy",
+            issue_url="https://github.com.goodborn.ckdeps-deploy/issues",
             comments="Beautiful CachyOS system deployment wizard.\n"
                      "Install packages, configure extras, and bootstrap your system.",
         )
@@ -72,7 +72,7 @@ class ArchitectApp(Adw.Application):
 
 def main():
     """Application main entry point."""
-    app = ArchitectApp()
+    app = CKDEPSApp()
     return app.run(sys.argv)
 
 

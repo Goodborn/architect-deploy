@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.goodborn.architect</id>
+  <id>com.goodborn.ckdeps</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
-  <name>Architect Deploy</name>
+  <name>CKDEPS</name>
   <summary>Beautiful CachyOS system deployment wizard</summary>
   <description>
     <p>
-      Architect Deploy transforms your CachyOS fresh-install experience into a beautiful,
+      CKDEPS transforms your CachyOS fresh-install experience into a beautiful,
       guided wizard. Select packages from AUR and Flatpak, configure system extras, and
       watch everything install with live progress tracking — all from a stunning GUI.
     </p>
@@ -21,22 +21,22 @@
       <li>Comprehensive deployment summary</li>
     </ul>
   </description>
-  <launchable type="desktop-id">com.goodborn.architect.desktop</launchable>
-  <url type="homepage">https://github.com/goodborn/architect-deploy</url>
-  <url type="bugtracker">https://github.com/goodborn/architect-deploy/issues</url>
+  <launchable type="desktop-id">com.goodborn.ckdeps.desktop</launchable>
+  <url type="homepage">https://github.com.goodborn.ckdeps-deploy</url>
+  <url type="bugtracker">https://github.com.goodborn.ckdeps-deploy/issues</url>
   <developer_name>Goodborn</developer_name>
   <content_rating type="oars-1.1" />
   <releases>
     <release version="1.0.0" date="2026-04-19">
       <description>
-        <p>Initial release of Architect Deploy</p>
+        <p>Initial release of CKDEPS</p>
       </description>
     </release>
   </releases>
   <screenshots>
     <screenshot type="default">
       <caption>Welcome screen with animated branding</caption>
-      <image>https://raw.githubusercontent.com/goodborn/architect-deploy/main/screenshots/welcome.png</image>
+      <image>https://raw.githubusercontent.com.goodborn.ckdeps-deploy/main/screenshots/welcome.png</image>
     </screenshot>
   </screenshots>
 </component>

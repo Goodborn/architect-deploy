@@ -19,7 +19,7 @@ from .pages.progress import ProgressPage
 from .pages.summary import SummaryPage
 
 
-class ArchitectWindow(Adw.ApplicationWindow):
+class CKDEPSWindow(Adw.ApplicationWindow):
     """Main application window with page-based wizard navigation."""
 
     def __init__(self, app):
@@ -28,7 +28,7 @@ class ArchitectWindow(Adw.ApplicationWindow):
         self.set_default_size(960, 720)
         self.set_size_request(800, 600)
         self.set_decorated(False)
-        self.add_css_class("architect-window")
+        self.add_css_class("ckdeps-window")
 
         self._installer = Installer()
         self._selected_packages = []
@@ -46,8 +46,8 @@ class ArchitectWindow(Adw.ApplicationWindow):
 
         # Title widget
         title_widget = Adw.WindowTitle(
-            title="ARCHITECT",
-            subtitle="System Deployment"
+            title="CKDEPS",
+            subtitle="CachyOS KDE Personal Stuff"
         )
         # ─── Custom Header (Undecorated Window) ───────
         handle = Gtk.WindowHandle()
@@ -141,7 +141,7 @@ class ArchitectWindow(Adw.ApplicationWindow):
             # Development path
             Path(__file__).parent / "resources" / "style.css",
             # Installed path
-            Path("/usr/share/architect-deploy/style.css"),
+            Path("/usr/share/ckdeps/style.css"),
         ]
 
         for css_path in css_paths:

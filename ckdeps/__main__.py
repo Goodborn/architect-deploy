@@ -1,4 +1,4 @@
-"""Allow running as `python -m architect_deploy`."""
+"""Allow running as `python -m ckdeps`."""
 
 from .main import main
 import sys

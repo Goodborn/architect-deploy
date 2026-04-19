@@ -1,8 +1,8 @@
-pkgbase = architect-deploy
+pkgbase = ckdeps
 	pkgdesc = Beautiful GTK4 system deployment wizard for CachyOS / Arch Linux
 	pkgver = 1.0.0
 	pkgrel = 1
-	url = https://github.com/goodborn/architect-deploy
+	url = https://github.com/goodborn/ckdeps
 	arch = any
 	license = GPL-3.0-or-later
 	makedepends = git
@@ -14,7 +14,7 @@ pkgbase = architect-deploy
 	depends = pacman
 	optdepends = yay: AUR package installation support
 	optdepends = paru: Alternative AUR helper
-	source = architect-deploy-1.0.0.tar.gz::https://github.com/goodborn/architect-deploy/archive/v1.0.0.tar.gz
+	source = ckdeps-1.0.0.tar.gz::https://github.com/goodborn/ckdeps/archive/v1.0.0.tar.gz
 	sha256sums = SKIP
 
-pkgname = architect-deploy
+pkgname = ckdeps
