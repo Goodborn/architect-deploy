@@ -1,10 +1,10 @@
-# 🚀 Architect Deploy
+# 🚀 CKDEPS
 
-**A personal collection of custom system tweaks and package selections for CachyOS / Arch Linux**
+**CachyOS KDE Personal Stuff**
 
-Architect is a tailored companion for my fresh-install workflow. It provides a guided, animated GUI wizard to bootstrap my system, install my preferred AUR and Flatpak packages, and apply my specific configuration extras.
+CKDEPS is a premium, automated deployment wizard designed specifically for personal CachyOS setups. It streamlines the installation of essential packages and automates system-wide optimizations in a single, beautiful interface.
 
-![Architect Deploy](https://img.shields.io/badge/GTK4-Adwaita-a855f7?style=for-the-badge)
+![CKDEPS](https://img.shields.io/badge/GTK4-Adwaita-a855f7?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green?style=for-the-badge)
 ![Arch](https://img.shields.io/badge/CachyOS-Arch_Linux-1793d1?style=for-the-badge)
 
@@ -25,10 +25,6 @@ libreoffice-still, betterbird, bolt-launcher, haruna, popcorntime,
 vmware-workstation, vmware-keymaps, qbittorrent, vesktop, obs-studio,
 visual-studio-code-bin, proton-vpn-gtk-app, harmonoid, brave-bin, firefox, eden
 
-CKDEPS (CachyOS KDE Personal Stuff)
-
-CKDEPS is a premium, automated deployment wizard designed specifically for personal CachyOS setups. It streamlines the installation of essential packages and automates system-wide optimizations in a single, beautiful interface.
-
 ### Flatpak
 Spotify, Kdenlive, Upscayl, Blanket, Cozy
 
@@ -39,15 +35,16 @@ Spotify, Kdenlive, Upscayl, Blanket, Cozy
 ### ⚡ Quick Start (Arch / CachyOS)
 Copy and paste this block to install and launch:
 ```bash
-git clone https://github.com/goodborn/ckdeps.git && \
-cd ckdeps && \
-ckdeps run
+git clone https://github.com/goodborn/architect-deploy.git && \
+cd architect-deploy && \
+sudo make install && \
+ckdeps
 ```
 
 ### 🚀 How to Run
 After installing, you can launch the app anytime by:
 1. Typing `ckdeps` in your terminal.
-2. Searching for **"Architect"** in your application menu.
+2. Searching for **"CKDEPS"** in your application menu.
 3. Running `make run` inside the project folder.
 
 ### 📦 From AUR (Recommended)
