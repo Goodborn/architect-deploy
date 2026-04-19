@@ -63,32 +63,28 @@ class ProgressPage(Gtk.Box):
         self._status_label.set_halign(Gtk.Align.CENTER)
         self.append(self._status_label)
 
-        # ─── Detailed Result List ────────────────────
-        self._result_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
-        self._result_box.set_margin_top(12)
+        # ─── Log Area (Optional, for visual feedback) ──────
+        self._log_scroll = Gtk.ScrolledWindow()
+        self._log_scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self._log_scroll.set_vexpand(True)
+        self._log_scroll.add_css_class("log-scroll")
+        self._log_scroll.set_margin_top(20)
+        
+        self._log_label = Gtk.Label(label="Initializing logs...")
+        self._log_label.add_css_class("log-text")
+        self._log_label.set_halign(Gtk.Align.START)
+        self._log_label.set_valign(Gtk.Align.START)
+        self._log_label.set_wrap(True)
+        self._log_scroll.set_child(self._log_label)
+        self.append(self._log_scroll)
 
-        result_scroll = Gtk.ScrolledWindow()
-        result_scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        result_scroll.set_vexpand(True)
-        result_scroll.set_child(self._result_box)
-        self.append(result_scroll)
 
-        self.append(result_scroll)
-
-        # ─── Continue Button (hidden until done) ──────
-        self._continue_btn = Gtk.Button(label="Continue to Summary  →")
-        self._continue_btn.add_css_class("nav-button-primary")
-        self._continue_btn.set_halign(Gtk.Align.END)
-        self._continue_btn.set_margin_top(16)
-        self._continue_btn.set_visible(False)
-        self._continue_btn.connect("clicked", lambda _: self.on_complete(self._results))
-        self.append(self._continue_btn)
 
     def start_installation(self, packages):
         """Begin installing the selected packages."""
         if not packages:
             self._status_label.set_text("No packages to install")
-            self._continue_btn.set_visible(True)
+            GLib.timeout_add(800, lambda: self.on_complete([]))
             return
 
         self._total = len(packages)
@@ -117,7 +113,12 @@ class ProgressPage(Gtk.Box):
         self._progress_bar.set_fraction(fraction)
 
     def _on_output(self, line):
-        """Send output to global log."""
+        """Show output in the local log area and global log."""
+        current_text = self._log_label.get_text()
+        # Keep only last 20 lines for performance
+        lines = (current_text + "\n" + line).split("\n")[-20:]
+        self._log_label.set_text("\n".join(lines))
+        
         window = self.get_root()
         if hasattr(window, "append_log"):
             window.append_log(line)
@@ -210,7 +211,7 @@ class ProgressPage(Gtk.Box):
         self._results = results
         self._progress_bar.set_fraction(1.0)
         self._current_pkg_label.set_text("Complete!")
-        self._status_label.set_text(
-            f"✨ {len(results)} packages processed"
-        )
-        self._continue_btn.set_visible(True)
+        self._status_label.set_text("✨ Transitioning to Summary...")
+        
+        # Immediate transition to Summary
+        GLib.timeout_add(800, lambda: self.on_complete(self._results))

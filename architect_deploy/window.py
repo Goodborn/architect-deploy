@@ -248,10 +248,8 @@ class ArchitectWindow(Adw.ApplicationWindow):
         """Called when all extras are done, show summary."""
         duration = time.time() - self._start_time
         self._extras_results = results
-        self._stack.set_visible_child_name("summary")
         self._summary_page.populate(self._package_results, self._extras_results, duration, self._terminal_log)
         self._stack.set_visible_child_name("summary")
-        self._summary_page.populate(self._package_results, self._extras_results, duration, self._terminal_log)
 
     def _on_finish(self):
         """Close the application."""
