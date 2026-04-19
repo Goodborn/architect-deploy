@@ -71,7 +71,17 @@ class CKDEPSApp(Adw.Application):
 
 
 def main():
-    """Application main entry point."""
+    """Application main entry point with terminal detach."""
+    # Automatically detach from terminal to allow it to close
+    if os.isatty(sys.stdin.fileno()):
+        try:
+            pid = os.fork()
+            if pid > 0:
+                # Parent exits to close terminal
+                sys.exit(0)
+        except OSError:
+            pass
+
     app = CKDEPSApp()
     return app.run(sys.argv)
 

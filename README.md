@@ -32,13 +32,12 @@ Spotify, Kdenlive, Upscayl, Blanket, Cozy
 
 ## 🔧 Installation
 
-### ⚡ Quick Start (Arch / CachyOS)
-Copy and paste this block to install and launch:
+### ⚡ One-Tap Run (Arch / CachyOS)
+Copy and paste this block to launch:
 ```bash
 git clone https://github.com/goodborn/ckdeps-personal.git && \
 cd ckdeps-personal && \
-sudo make install && \
-ckdeps
+make run
 ```
 
 ### 🚀 How to Run
