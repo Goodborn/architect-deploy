@@ -282,8 +282,6 @@ class Installer:
                     result = self._setup_aliases()
                 elif extra.key == "haruna_folders":
                     result = self._setup_haruna(installed_packages)
-                elif extra.key == "solaar_autostart":
-                    result = self._setup_solaar(installed_packages)
                 elif extra.key == "disable_recent":
                     result = self._disable_recent_files()
                 else:

@@ -51,7 +51,6 @@ AUR_PACKAGES = [
     Package("obs-studio", "OBS Studio", "Live streaming", "obs", "Media", "aur", domain="obsproject.com"),
     Package("visual-studio-code-bin", "VS Code", "Modern code editor", "visual-studio-code", "Development", "aur", domain="code.visualstudio.com"),
     Package("proton-vpn-gtk-app", "Proton VPN", "Secure VPN application", "network-vpn", "Networking", "aur", domain="protonvpn.com"),
-    Package("solaar", "Solaar", "Logitech device manager", "input-mouse", "Hardware", "aur", domain="logitech.com"),
     Package("harmonoid", "Harmonoid", "Beautiful music player", "multimedia-audio-player", "Media", "aur", domain="harmonoid.com"),
     Package("brave-bin", "Brave Browser", "Privacy-focused web browser", "brave-browser", "Internet", "aur", domain="brave.com"),
     Package("firefox", "Firefox", "Fast, private, and open-source web browser", "firefox", "Internet", "aur", domain="firefox.com"),
@@ -80,8 +79,6 @@ EXTRAS = [
                 "utilities-terminal"),
     ExtraConfig("haruna_folders", "Haruna Folders", "Create playlist/resume support directories",
                 "folder-videos"),
-    ExtraConfig("solaar_autostart", "Solaar Autostart", "Add Solaar to Hyprland startup apps",
-                "input-mouse"),
     ExtraConfig("disable_recent", "Disable Recent Files", "Turn off GNOME recent file tracking for privacy",
                 "preferences-system-privacy"),
 ]

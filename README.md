@@ -23,7 +23,7 @@ Architect is a tailored companion for my fresh-install workflow. It provides a g
 thefuck, fzf, atuin, zoxide, bazaar, hyprsunset, anydesk-bin, foliate,
 libreoffice-still, betterbird, bolt-launcher, haruna, popcorntime,
 vmware-workstation, vmware-keymaps, qbittorrent, vesktop, obs-studio,
-visual-studio-code-bin, proton-vpn-gtk-app, solaar, harmonoid, brave-bin, firefox, eden
+visual-studio-code-bin, proton-vpn-gtk-app, harmonoid, brave-bin, firefox, eden
 
 ### Flatpak
 Spotify, Kdenlive, Upscayl, Blanket, Cozy
