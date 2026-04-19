@@ -22,7 +22,7 @@ class SplashPage(Gtk.Box):
         self.append(self._logo)
 
         # ─── Title ───────────────────────────────────
-        self._title = Gtk.Label(label="ARCHITECT")
+        self._title = Gtk.Label(label="CKDEPS")
         self._title.add_css_class("splash-title")
         self._title.set_opacity(0)
         self.append(self._title)

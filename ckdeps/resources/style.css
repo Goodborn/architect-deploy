@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   Architect Deploy — Custom GTK4/Adwaita CSS
+   CKDEPS — Custom GTK4/Adwaita CSS
    A premium, animated dark theme
    ═══════════════════════════════════════════════════════ */
 
@@ -35,13 +35,13 @@ window.ckdeps-window {
 }
 
 /* ─── Title Bar ────────────────────────────────────── */
-headerbar.architect-header {
+headerbar.ckdeps-header {
     background: alpha(@headerbar_bg_color, 0.85);
     border-bottom: 1px solid alpha(#a855f7, 0.2);
     box-shadow: 0 2px 16px alpha(black, 0.3);
 }
 
-headerbar.architect-header title {
+headerbar.ckdeps-header title {
     font-weight: 800;
     font-size: 15px;
     letter-spacing: 1px;

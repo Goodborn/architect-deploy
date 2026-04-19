@@ -1,4 +1,4 @@
-"""Package definitions for Architect Deploy."""
+"""Package definitions for CKDEPS."""
 
 from dataclasses import dataclass, field
 from typing import Optional

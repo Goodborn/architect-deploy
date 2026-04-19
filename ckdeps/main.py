@@ -1,4 +1,4 @@
-"""Architect Deploy — Application entry point."""
+"""CKDEPS — Application entry point."""
 
 import sys
 import gi
@@ -6,10 +6,9 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, Gio, GLib
 
-from . import __app_id__, __version__
+from . import __app_id__, __version__, __app_name__
 from .window import CKDEPSWindow
 import os
-import sys
 
 
 class CKDEPSApp(Adw.Application):
@@ -55,15 +54,15 @@ class CKDEPSApp(Adw.Application):
         """Show about dialog."""
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
-            application_name="Architect Deploy",
-            application_icon="com.goodborn.ckdeps",
+            application_name=__app_name__,
+            application_icon=__app_id__,
             developer_name="Goodborn",
             version=__version__,
             developers=["Goodborn"],
             copyright="© 2026 Goodborn",
             license_type=Gtk.License.GPL_3_0,
-            website="https://github.com.goodborn.ckdeps-deploy",
-            issue_url="https://github.com.goodborn.ckdeps-deploy/issues",
+            website="https://github.com/goodborn/ckdeps-personal",
+            issue_url="https://github.com/goodborn/ckdeps-personal/issues",
             comments="Beautiful CachyOS system deployment wizard.\n"
                      "Install packages, configure extras, and bootstrap your system.",
         )
@@ -71,17 +70,7 @@ class CKDEPSApp(Adw.Application):
 
 
 def main():
-    """Application main entry point with terminal detach."""
-    # Automatically detach from terminal to allow it to close
-    if os.isatty(sys.stdin.fileno()):
-        try:
-            pid = os.fork()
-            if pid > 0:
-                # Parent exits to close terminal
-                sys.exit(0)
-        except OSError:
-            pass
-
+    """Application main entry point."""
     app = CKDEPSApp()
     return app.run(sys.argv)
 

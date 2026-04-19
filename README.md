@@ -55,9 +55,9 @@ yay -S ckdeps
 ### 🛠️ Run from Source (Development)
 To test changes without installing to your system:
 ```bash
-git clone https://github.com/goodborn/ckdeps.git
-cd ckdeps
-python3 -m architect_deploy
+git clone https://github.com/goodborn/ckdeps-personal.git
+cd ckdeps-personal
+python3 -m ckdeps
 ```
 
 ---
@@ -100,9 +100,9 @@ ckdeps/
 ├── bin/
 │   └── ckdeps     # CLI entry point
 ├── data/
-│   ├── com.goodborn.architect.desktop
-│   ├── com.goodborn.architect.svg
-│   └── com.goodborn.architect.metainfo.xml
+│   ├── com.goodborn.ckdeps.desktop
+│   ├── com.goodborn.ckdeps.svg
+│   └── com.goodborn.ckdeps.metainfo.xml
 ├── Makefile                 # Install/uninstall targets
 ├── PKGBUILD                 # AUR build recipe
 └── .SRCINFO                 # AUR metadata

@@ -5,7 +5,7 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc="Beautiful GTK4 system deployment wizard for CachyOS / Arch Linux"
 arch=('any')
-url="https://github.com/goodborn/ckdeps"
+url="https://github.com/goodborn/ckdeps-personal"
 license=('GPL-3.0-or-later')
 depends=(
     'python'
