@@ -35,8 +35,8 @@ Spotify, Kdenlive, Upscayl, Blanket, Cozy
 ### ⚡ Quick Start (Arch / CachyOS)
 Copy and paste this block to install and launch:
 ```bash
-git clone https://github.com/goodborn/architect-deploy.git && \
-cd architect-deploy && \
+git clone https://github.com/goodborn/ckdeps-personal.git && \
+cd ckdeps-personal && \
 sudo make install && \
 ckdeps
 ```
