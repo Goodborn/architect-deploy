@@ -29,6 +29,7 @@ install: deps
 	install -Dm644 architect_deploy/backend/__init__.py "$(DESTDIR)$(LIBDIR)/architect_deploy/backend/__init__.py"
 	install -Dm644 architect_deploy/backend/installer.py "$(DESTDIR)$(LIBDIR)/architect_deploy/backend/installer.py"
 	install -Dm644 architect_deploy/backend/package_data.py "$(DESTDIR)$(LIBDIR)/architect_deploy/backend/package_data.py"
+	install -Dm644 architect_deploy/backend/icon_loader.py "$(DESTDIR)$(LIBDIR)/architect_deploy/backend/icon_loader.py"
 	install -Dm644 architect_deploy/pages/__init__.py "$(DESTDIR)$(LIBDIR)/architect_deploy/pages/__init__.py"
 	install -Dm644 architect_deploy/pages/splash.py "$(DESTDIR)$(LIBDIR)/architect_deploy/pages/splash.py"
 	install -Dm644 architect_deploy/pages/welcome.py "$(DESTDIR)$(LIBDIR)/architect_deploy/pages/welcome.py"

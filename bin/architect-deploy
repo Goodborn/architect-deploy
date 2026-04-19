@@ -20,4 +20,14 @@ for path in [_installed_lib, _source_lib]:
 from architect_deploy.main import main
 
 if __name__ == "__main__":
+    # Automatically detach from terminal if running as a standalone app
+    if os.isatty(sys.stdin.fileno()):
+        try:
+            pid = os.fork()
+            if pid > 0:
+                # Parent process exits, closing the terminal
+                sys.exit(0)
+        except OSError:
+            pass
+
     sys.exit(main())
