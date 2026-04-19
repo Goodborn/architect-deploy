@@ -249,6 +249,13 @@ headerbar.architect-header title {
     font-size: 12px;
 }
 
+/* ─── Detailed List Mode ───────────────────────────── */
+.layout-detailed .package-card {
+    min-width: 100%;
+    margin: 2px 0;
+    padding: 12px 20px;
+}
+
 .card-info-button {
     background: transparent;
     color: alpha(white, 0.3);

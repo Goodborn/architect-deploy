@@ -158,10 +158,12 @@ class PackagesPage(Gtk.Box):
             flow.set_row_spacing(6)
             flow.add_css_class("package-grid")
             if self._layout_mode == "compact":
-                flow.set_max_children_per_line(30) # High limit for responsiveness
+                flow.set_max_children_per_line(30)
+                flow.set_homogeneous(True)
                 flow.add_css_class("layout-compact")
             else:
-                flow.set_max_children_per_line(15) # High limit for responsiveness
+                flow.set_max_children_per_line(1)
+                flow.set_homogeneous(False)
                 flow.add_css_class("layout-detailed")
 
             for i, pkg in enumerate(pkgs):
