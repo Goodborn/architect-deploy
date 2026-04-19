@@ -46,20 +46,20 @@ install: deps
 	install -Dm755 bin/ckdeps "$(DESTDIR)$(BINDIR)/ckdeps"
 
 	# Install desktop file
-	install -Dm644 data/com.goodborn.architect.desktop "$(DESTDIR)$(APPDIR)/com.goodborn.architect.desktop"
+	install -Dm644 data/com.goodborn.ckdeps.desktop "$(DESTDIR)$(APPDIR)/com.goodborn.ckdeps.desktop"
 
 	# Install icon
-	install -Dm644 data/com.goodborn.architect.svg "$(DESTDIR)$(ICONDIR)/com.goodborn.architect.svg"
+	install -Dm644 data/com.goodborn.ckdeps.svg "$(DESTDIR)$(ICONDIR)/com.goodborn.ckdeps.svg"
 
 	# Install metainfo
-	install -Dm644 data/com.goodborn.architect.metainfo.xml "$(DESTDIR)$(METADIR)/com.goodborn.architect.metainfo.xml"
+	install -Dm644 data/com.goodborn.ckdeps.metainfo.xml "$(DESTDIR)$(METADIR)/com.goodborn.ckdeps.metainfo.xml"
 
 uninstall:
 	rm -rf "$(DESTDIR)$(LIBDIR)"
 	rm -f  "$(DESTDIR)$(BINDIR)/ckdeps"
-	rm -f  "$(DESTDIR)$(APPDIR)/com.goodborn.architect.desktop"
-	rm -f  "$(DESTDIR)$(ICONDIR)/com.goodborn.architect.svg"
-	rm -f  "$(DESTDIR)$(METADIR)/com.goodborn.architect.metainfo.xml"
+	rm -f  "$(DESTDIR)$(APPDIR)/com.goodborn.ckdeps.desktop"
+	rm -f  "$(DESTDIR)$(ICONDIR)/com.goodborn.ckdeps.svg"
+	rm -f  "$(DESTDIR)$(METADIR)/com.goodborn.ckdeps.metainfo.xml"
 	rm -f  "$(DESTDIR)$(CSSDIR)/style.css"
 	rmdir --ignore-fail-on-non-empty "$(DESTDIR)$(CSSDIR)" 2>/dev/null || true
 
