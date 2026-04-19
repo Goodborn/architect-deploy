@@ -12,11 +12,12 @@ from ..backend.icon_loader import icon_loader
 class PackagesPage(Gtk.Box):
     """Package selection page with categorized card grid."""
 
-    def __init__(self, installer, on_continue: callable):
+    def __init__(self, installer, on_continue: callable, on_back: callable):
         super().__init__(orientation=Gtk.Orientation.VERTICAL)
         self.add_css_class("page-container")
         self.installer = installer
         self.on_continue = on_continue
+        self.on_back = on_back
         self._cards = {}  # pkg.name -> (card_widget, check_button)
         self._all_packages = list(ALL_PACKAGES)  # Make copies
         self._layout_mode = "compact"  # Default to compact
@@ -103,6 +104,11 @@ class PackagesPage(Gtk.Box):
         self._selected_label.set_hexpand(True)
         self._selected_label.set_halign(Gtk.Align.START)
         nav_box.append(self._selected_label)
+
+        back_btn = Gtk.Button(label="  ←  Back  ")
+        back_btn.add_css_class("nav-button")
+        back_btn.connect("clicked", lambda _: self.on_back())
+        nav_box.append(back_btn)
 
         skip_btn = Gtk.Button(label="Skip")
         skip_btn.add_css_class("nav-button")

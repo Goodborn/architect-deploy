@@ -95,11 +95,13 @@ class ArchitectWindow(Adw.ApplicationWindow):
         self._packages_page = PackagesPage(
             installer=self._installer,
             on_continue=self._go_to_extras,
+            on_back=self._go_back_to_welcome,
         )
         self._stack.add_named(self._packages_page, "packages")
 
         self._extras_page = ExtrasPage(
             on_continue=self._go_to_progress,
+            on_back=self._go_back_to_packages,
         )
         self._stack.add_named(self._extras_page, "extras")
 
@@ -159,6 +161,14 @@ class ArchitectWindow(Adw.ApplicationWindow):
         self._installer.sudo_password = password
         self._bootstrap_page.start_bootstrap()
         self._stack.set_visible_child_name("bootstrap")
+
+    def _go_back_to_welcome(self):
+        """Go back to welcome from packages/bootstrap."""
+        self._stack.set_visible_child_name("welcome")
+
+    def _go_back_to_packages(self):
+        """Go back to packages selection from extras."""
+        self._stack.set_visible_child_name("packages")
 
     def append_log(self, line):
         """Append a line to the global terminal log."""

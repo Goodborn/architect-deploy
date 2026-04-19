@@ -11,10 +11,11 @@ from architect_deploy.backend.package_data import EXTRAS, ExtraConfig
 class ExtrasPage(Gtk.Box):
     """Configuration extras selection page."""
 
-    def __init__(self, on_continue: callable):
+    def __init__(self, on_continue: callable, on_back: callable):
         super().__init__(orientation=Gtk.Orientation.VERTICAL)
         self.add_css_class("page-container")
         self.on_continue = on_continue
+        self.on_back = on_back
         self._extras = [ExtraConfig(
             key=e.key, title=e.title, description=e.description,
             icon_name=e.icon_name
@@ -64,6 +65,11 @@ class ExtrasPage(Gtk.Box):
         nav_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
         nav_box.set_halign(Gtk.Align.END)
         nav_box.set_margin_top(16)
+
+        back_btn = Gtk.Button(label="  ←  Back  ")
+        back_btn.add_css_class("nav-button")
+        back_btn.connect("clicked", lambda _: self.on_back())
+        nav_box.append(back_btn)
 
         skip_btn = Gtk.Button(label="Skip Extras")
         skip_btn.add_css_class("nav-button")
