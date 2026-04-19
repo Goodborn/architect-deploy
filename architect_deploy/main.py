@@ -8,6 +8,8 @@ from gi.repository import Gtk, Adw, Gio, GLib
 
 from . import __app_id__, __version__
 from .window import ArchitectWindow
+import os
+import sys
 
 
 class ArchitectApp(Adw.Application):
@@ -68,8 +70,45 @@ class ArchitectApp(Adw.Application):
         about.present()
 
 
+def _daemonize():
+    """Detach the process from the terminal."""
+    if not os.isatty(sys.stdin.fileno()):
+        return
+
+    try:
+        # First fork
+        pid = os.fork()
+        if pid > 0:
+            sys.exit(0)
+    except OSError:
+        return
+
+    # Create new session
+    os.setsid()
+
+    try:
+        # Second fork
+        pid = os.fork()
+        if pid > 0:
+            sys.exit(0)
+    except OSError:
+        return
+
+    # Redirect standard file descriptors to devnull
+    sys.stdout.flush()
+    sys.stderr.flush()
+    si = open(os.devnull, 'r')
+    so = open(os.devnull, 'a+')
+    se = open(os.devnull, 'a+')
+    os.dup2(si.fileno(), sys.stdin.fileno())
+    os.dup2(so.fileno(), sys.stdout.fileno())
+    os.dup2(se.fileno(), sys.stderr.fileno())
+
 def main():
     """Application main entry point."""
+    # Detach from terminal if running interactively
+    _daemonize()
+
     app = ArchitectApp()
     return app.run(sys.argv)
 
