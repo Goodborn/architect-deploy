@@ -37,8 +37,7 @@ Copy and paste this block to install and launch:
 ```bash
 git clone https://github.com/goodborn/architect-deploy.git && \
 cd architect-deploy && \
-sudo make install && \
-architect-deploy
+make run
 ```
 
 ### 🚀 How to Run

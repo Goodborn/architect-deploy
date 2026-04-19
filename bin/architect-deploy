@@ -7,12 +7,19 @@ import os
 # Determine base directory for import resolution
 _script_dir = os.path.dirname(os.path.realpath(__file__))
 
-# When installed: /usr/bin/architect-deploy → libs at /usr/lib/architect-deploy/
-# When running from source: ./bin/architect-deploy → libs at ../
-_installed_lib = os.path.join(os.path.dirname(_script_dir), "lib", "architect-deploy")
-_source_lib = os.path.dirname(_script_dir)
+# git clone https://github.com/goodborn/architect-deploy.git && \
+# cd architect-deploy && \
+# make run
 
-for path in [_installed_lib, _source_lib]:
+# When running from source: ./bin/architect-deploy → libs at ../
+# Possible library locations
+_paths = [
+    os.path.join(os.path.dirname(_script_dir), "lib", "architect-deploy"), # /usr/lib/architect-deploy
+    os.path.dirname(_script_dir), # local ./bin/
+    _script_dir # local root ./
+]
+
+for path in _paths:
     if os.path.isdir(os.path.join(path, "architect_deploy")):
         sys.path.insert(0, path)
         break
