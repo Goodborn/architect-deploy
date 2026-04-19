@@ -84,8 +84,6 @@ EXTRAS = [
                 "input-mouse"),
     ExtraConfig("disable_recent", "Disable Recent Files", "Turn off GNOME recent file tracking for privacy",
                 "preferences-system-privacy"),
-    ExtraConfig("kde_sync", "KDE Setup Sync", "Syncs your KDE environment. If a backup exists in ~/Documents/ArchitectBackups, it restores it. Otherwise, it backups your current theme, shortcuts, and panel layout.",
-                "preferences-desktop-theme"),
 ]
 
 # ---------- Category Colors (for UI) ----------

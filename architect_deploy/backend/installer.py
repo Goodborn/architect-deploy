@@ -286,8 +286,6 @@ class Installer:
                     result = self._setup_solaar(installed_packages)
                 elif extra.key == "disable_recent":
                     result = self._disable_recent_files()
-                elif extra.key == "kde_sync":
-                    result = self._sync_kde()
                 else:
                     result = ("skipped", "Unknown extra")
 
@@ -428,39 +426,3 @@ class Installer:
 
         self._run_in_thread(_work)
 
-    def _sync_kde(self) -> tuple[str, str]:
-        """Backup or restore KDE settings."""
-        backup_dir = Path.home() / "Documents" / "ArchitectBackups"
-        backup_file = backup_dir / "kde_settings.tar.gz"
-        
-        # Files to sync
-        kde_files = [
-            ".config/kdeglobals",
-            ".config/kglobalshortcutsrc",
-            ".config/khotkeysrc",
-            ".config/kwinrc",
-            ".config/plasmarc",
-            ".config/plasmashellrc",
-            ".config/kwinrulesrc",
-            ".config/gtk-3.0/settings.ini",
-            ".config/gtk-4.0/settings.ini"
-        ]
-
-        try:
-            import tarfile
-            if backup_file.exists():
-                # RESTORE
-                with tarfile.open(backup_file, "r:gz") as tar:
-                    tar.extractall(path=Path.home())
-                return ("success", "KDE Settings Restored from backup")
-            else:
-                # BACKUP
-                backup_dir.mkdir(parents=True, exist_ok=True)
-                with tarfile.open(backup_file, "w:gz") as tar:
-                    for f in kde_files:
-                        full_path = Path.home() / f
-                        if full_path.exists():
-                            tar.add(full_path, arcname=f)
-                return ("success", "KDE Settings Backed up to Documents/ArchitectBackups")
-        except Exception as e:
-            return ("failed", f"KDE Sync Error: {str(e)}")

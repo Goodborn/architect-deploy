@@ -14,7 +14,7 @@ Architect is a tailored companion for my fresh-install workflow. It provides a g
 
 | 📦 **Smart Packages** | Personalized list of AUR + Flatpak apps |
 | ⚡ **One-Click Bootstrap** | Automates system updates and manager setup |
-| 🎨 **Personal Tweaks** | Custom aliases, KDE settings, and app configs |
+| 🎨 **Personal Tweaks** | Custom aliases, startup apps, and app configs |
 | 📊 **Live Progress** | Real-time installation tracking with log output |
 
 ## 📋 Package List
