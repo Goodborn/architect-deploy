@@ -23,7 +23,8 @@ CKDEPS is a personal initial (fresh install) app to my liking to get CachyOS KDE
 thefuck, fzf, atuin, zoxide, bazaar, hyprsunset, anydesk-bin, foliate,
 libreoffice-still, betterbird, bolt-launcher, haruna, popcorntime,
 vmware-workstation, vmware-keymaps, qbittorrent, vesktop, obs-studio,
-visual-studio-code-bin, proton-vpn-gtk-app, harmonoid, brave-bin, firefox, eden
+visual-studio-code-bin, proton-vpn-gtk-app, harmonoid, brave-bin, firefox, eden,
+kolourpaint, sniffnet, namida-bin
 
 ### Flatpak
 Spotify, Kdenlive, Upscayl, Blanket, Cozy

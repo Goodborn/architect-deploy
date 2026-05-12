@@ -55,6 +55,9 @@ AUR_PACKAGES = [
     Package("brave-bin", "Brave Browser", "Privacy-focused web browser", "brave-browser", "Internet", "aur", domain="brave.com"),
     Package("firefox", "Firefox", "Fast, private, and open-source web browser", "firefox", "Internet", "aur", domain="firefox.com"),
     Package("eden", "Eden", "Modern development tool", "applications-development", "Development", "aur", domain="github.com"),
+    Package("kolourpaint", "KolourPaint", "Easy-to-use paint program", "kolourpaint", "Media", "aur", domain="kde.org"),
+    Package("sniffnet", "Sniffnet", "Network monitoring tool", "network-workgroup", "Networking", "aur", domain="github.com"),
+    Package("namida-bin", "Namida", "Beautiful music and video player", "multimedia-audio-player", "Media", "aur", domain="github.com"),
 ]
 
 # ---------- Flatpak Packages ----------
