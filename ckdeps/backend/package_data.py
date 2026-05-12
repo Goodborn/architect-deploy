@@ -72,6 +72,8 @@ FLATPAK_PACKAGES = [
             flatpak_id="com.rafaelmardojai.Blanket"),
     Package("cozy", "Cozy", "Audiobook player", "com.github.geigi.cozy", "Media", "flatpak", domain=None,
             flatpak_id="com.github.geigi.cozy"),
+    Package("appflowy", "AppFlowy", "Open-source Notion alternative", "io.appflowy.AppFlowy", "Productivity", "flatpak", domain="appflowy.io",
+            flatpak_id="io.appflowy.AppFlowy"),
 ]
 
 ALL_PACKAGES = AUR_PACKAGES + FLATPAK_PACKAGES

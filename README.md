@@ -27,7 +27,7 @@ visual-studio-code-bin, proton-vpn-gtk-app, harmonoid, brave-bin, firefox, eden,
 kolourpaint, sniffnet, namida-bin
 
 ### Flatpak
-Spotify, Kdenlive, Upscayl, Blanket, Cozy
+Spotify, Kdenlive, Upscayl, Blanket, Cozy, AppFlowy
 
 ---
 
